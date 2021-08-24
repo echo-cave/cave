@@ -4,7 +4,7 @@
 
 ## 使用方法
 
-部署[API](https://github.com/echo-cave/v1)(或自行开发)。
+部署[API](https://github.com/echo-cave/v2)(或自行开发)。
 
 ## 使用须知
 
