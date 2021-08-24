@@ -13,6 +13,7 @@ for cat in categories:
                 f.close()
             append = "%s\n" % (content)
             res += append
+            res.strip()
 
 with open("cave.txt", "w", encoding='utf-8') as outFile:
     outFile.write(res)
