@@ -10,6 +10,7 @@ for cat in categories:
         if file.endswith(".txt"):
             with open(dirPath + "/" + file, "r", encoding='utf-8') as f:
                 content = f.read()
+                content.strip()
                 f.close()
             append = "%s\n" % (content)
             res += append
