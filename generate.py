@@ -1,7 +1,7 @@
 #encoding: utf-8
 import os
 fdirPath = "categories"
-categories = ["general"]
+categories = ["general", "game"]
 res = ""
 for cat in categories:
     dirPath = fdirPath + "/" + cat
