@@ -28,7 +28,7 @@ jobs:
     - name: 执行任务
       run: |
         python generate.py
-    - name: 提交更改
+    - name: 获取时间/提交更改
       run: |
          git config core.ignorecase false
          git config --local user.email "noreply@rdpstudio.top"
@@ -36,3 +36,14 @@ jobs:
          git add .
          git commit -m "Update"
          git push
+         echo "::set-env name=date2::$(date +'%Y%m%d-%H%M')"
+    - name: Auto Release
+      uses: softprops/action-gh-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        name: 自动编译
+        tag_name: ${{ env.date2 }}
+        body: |            
+            🎉 回声洞自动生成成功 ✨
+        files: ./cave.txt
